@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="All Majstore Tests">
+
+    <test name="CheckingCorrectUrlTest">
+        <classes>
+            <class name="tests.CheckingCorrectUrlTest"/>
+        </classes>
+    </test>
+
+    <test name="Failed Login Tests">
+        <classes>
+            <class name="tests.FailedLoginTest"/>
+        </classes>
+    </test>
+
+</suite>
