@@ -2,7 +2,7 @@ package gui.driver;
 
 import gui.configuration.LocalWebDriverProperties;
 import gui.configuration.TestRunProperties;
-import net.bytebuddy.pool.TypePool;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
