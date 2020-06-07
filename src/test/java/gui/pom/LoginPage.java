@@ -2,6 +2,7 @@ package gui.pom;
 
 
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -38,20 +39,24 @@ public class LoginPage extends BasePage {
     }
 
 
+    @Step("Type into User Name Field {username}")
     private void enterLoginToTheUsernameInput(String username) {
         waitUntilElementIsVisible(usernameOrEmailAddressInput);
         usernameOrEmailAddressInput.sendKeys(username);
     }
 
+    @Step("Type into Password Field {password}")
     private void enterPasswordInPasswordField(String password) {
         waitUntilElementIsVisible(passwordInput);
         passwordInput.sendKeys(password);
     }
 
+    @Step("Click on Login Button")
     private void clickOnLoginButton() {
         LoginButton.click();
     }
 
+    @Step("Getting warning message from Login Page")
     private String getErrorMessageOut() {
         waitUntilElementIsVisible(errorMessageField);
         System.out.println(errorMessageField.getText());
@@ -64,6 +69,7 @@ public class LoginPage extends BasePage {
         clickOnLoginButton();
     }
 
+    @Step("Getting is warning message display")
     public boolean errorMessageIsDisplay() {
         boolean errorMessageDisplay = (getErrorMessageOut().equals(ERRORMESSAGE)) ? true : false;
         return errorMessageDisplay;

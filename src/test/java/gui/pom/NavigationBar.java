@@ -1,9 +1,7 @@
 package gui.pom;
 
 import gui.driver.DriverManager;
-
-import gui.navigation.ApplicationURLs;
-import org.openqa.selenium.support.PageFactory;
+import io.qameta.allure.Step;
 
 import static gui.navigation.ApplicationURLs.APPLICATION_URL;
 
@@ -11,11 +9,9 @@ public class NavigationBar {
 
 
 
-    public NavigationBar() {
-        PageFactory.initElements(DriverManager.getWebDriver(), this);
-    }
 
 
+    @Step("Checking the web page url")
     private String getActualPageUrl() {
         String pageUrl;
         pageUrl = DriverManager.getWebDriver().getCurrentUrl();
@@ -24,6 +20,7 @@ public class NavigationBar {
 
     private String urlC = getActualPageUrl();
 
+    @Step("Comparing entered url with the correct {APPLICATION_URL}")
     public boolean assertionPageUrl() {
         String applicationUrl = APPLICATION_URL;
         boolean isCorrectUrl = (applicationUrl.equals(urlC)) ? true : false;
