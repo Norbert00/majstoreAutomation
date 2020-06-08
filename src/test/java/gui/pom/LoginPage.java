@@ -2,6 +2,8 @@ package gui.pom;
 
 
 
+import gui.generic.assertions.AssertWebElement;
+import gui.wait.WaitForElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,9 +12,6 @@ import org.openqa.selenium.support.FindBy;
 import static gui.wait.WaitForElement.waitUntilElementIsVisible;
 
 public class LoginPage extends BasePage {
-
-
-
 
     @FindBy(id = "user_login")
     private WebElement usernameOrEmailAddressInput;
@@ -37,6 +36,7 @@ public class LoginPage extends BasePage {
     public static String getINCORRECTPASSWORD() {
         return INCORRECTPASSWORD;
     }
+    public static String getErrormessage() {return ERRORMESSAGE;}
 
 
     @Step("Type into User Name Field {username}")
@@ -56,24 +56,31 @@ public class LoginPage extends BasePage {
         LoginButton.click();
     }
 
-    @Step("Getting warning message from Login Page")
-    private String getErrorMessageOut() {
-        waitUntilElementIsVisible(errorMessageField);
-        System.out.println(errorMessageField.getText());
-        return errorMessageField.getText();
+
+    @Step("Assert that warning message {warningMessage}")
+    public void assertThatWarningIsDisplayed(String warningMessage) {
+        WaitForElement.waitUntilElementIsVisible(errorMessageField);
+        AssertWebElement.assertThat(errorMessageField).isDisplayed().hasText(warningMessage);
     }
 
+//    @Step("Getting warning message from Login Page")
+//    private String getErrorMessageOut() {
+//        waitUntilElementIsVisible(errorMessageField);
+//        System.out.println(errorMessageField.getText());
+//        return errorMessageField.getText();
+//    }
+//
     public void userEnterIncorrectLoginAndPassword(String username, String password) {
         enterLoginToTheUsernameInput(username);
         enterPasswordInPasswordField(password);
         clickOnLoginButton();
     }
-
-    @Step("Getting is warning message display")
-    public boolean errorMessageIsDisplay() {
-        boolean errorMessageDisplay = (getErrorMessageOut().equals(ERRORMESSAGE)) ? true : false;
-        return errorMessageDisplay;
-    }
+//
+//    @Step("Getting is warning message display")
+//    public boolean errorMessageIsDisplay() {
+//        boolean errorMessageDisplay = (getErrorMessageOut().equals(ERRORMESSAGE)) ? true : false;
+//        return errorMessageDisplay;
+//    }
 
 
 }
