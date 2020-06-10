@@ -6,11 +6,21 @@ package gui.driver;
 
 import io.qameta.allure.Step;
 
+import static gui.configuration.TestRunProperties.getIsHeadLessModeRun;
+
 public class DriverUtils {
+
 
     @Step("Maximizing browser window")
     public static void setInitialConfiguration() {
-        DriverManager.getWebDriver().manage().window().maximize();
+
+        if (!getIsHeadLessModeRun()) {
+            DriverManager.getWebDriver();
+        } else {
+            DriverManager.getWebDriver().manage().window().maximize();
+        }
+
+
     }
 
     @Step("Navigating to URL: {url}")
