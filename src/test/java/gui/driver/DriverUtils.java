@@ -14,7 +14,7 @@ public class DriverUtils {
     @Step("Maximizing browser window")
     public static void setInitialConfiguration() {
 
-        if (!getIsHeadLessModeRun()) {
+        if (getIsHeadLessModeRun()) {
             DriverManager.getWebDriver();
         } else {
             DriverManager.getWebDriver().manage().window().maximize();
