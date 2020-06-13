@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
@@ -58,15 +59,16 @@ public class BrowserFactory {
                 switch (browserType) {
                     case CHROME:
                         System.setProperty("webdriver.chrome.driver", LocalWebDriverProperties.getChromeWebDriverLocation());
+
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.setHeadless(true);
-                        chromeOptions.addArguments("--no-sandbox");
+                        chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
                         return new ChromeDriver(chromeOptions);
                     case FIREFOX:
                         System.setProperty("webdriver.gecko.driver", LocalWebDriverProperties.getFirefoxWebDriverLocation());
                         FirefoxOptions firefoxOptions = new FirefoxOptions();
                         firefoxOptions.setHeadless(true);
-                        firefoxOptions.addArguments("--no-sandbox");
+                        firefoxOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
                         return new FirefoxDriver(firefoxOptions);
                     default:
                         throw new IllegalStateException(MESSAGE_PROBLEM_WITH_HEADLESS);
