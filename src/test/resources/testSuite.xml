@@ -3,14 +3,14 @@
 <suite name="All Majstore Tests" parallel="tests" thread-count="1">
 
     <test name="CheckingCorrectUrlTest">
-        <parameter name="browser" value="FIREFOX"/>
+        <parameter name="browser" value="CHROME"/>
         <classes>
             <class name="tests.CheckingCorrectUrlTest"/>
         </classes>
     </test>
 
     <test name="Failed Login Tests">
-        <parameter name="browser" value="FIREFOX"/>
+        <parameter name="browser" value="CHROME"/>
         <classes>
             <class name="tests.FailedLoginTest"/>
         </classes>
