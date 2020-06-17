@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
@@ -92,40 +92,6 @@ public class BrowserFactory {
             }
         }
     }
-
-
-//        if (isRemoteRun) {
-//            //DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-//
-//            switch (browserType) {
-//                case CHROME:
-//                    ChromeOptions chromeOptions = new ChromeOptions();
-//                    desiredCapabilities.merge(chromeOptions);
-//                    return getRemoteWebDriver(desiredCapabilities);
-//
-//                case FIREFOX:
-//                    FirefoxOptions firefoxOptions = new FirefoxOptions();
-//                    desiredCapabilities.merge(firefoxOptions);
-//                    return getRemoteWebDriver(desiredCapabilities);
-//
-//                default:
-//                    throw new IllegalStateException(MESSAGE_UNKNOWN_BROWSER);
-//            }
-//
-//        } else {
-//
-//            switch (browserType) {
-//                case CHROME:
-//                    System.setProperty("webdriver.chrome.driver", LocalWebDriverProperties.getChromeWebDriverLocation());
-//                    return new ChromeDriver();
-//                case FIREFOX:
-//                    System.setProperty("webdriver.gecko.driver", LocalWebDriverProperties.getFirefoxWebDriverLocation());
-//                    return new FirefoxDriver();
-//                default:
-//                    throw new IllegalStateException("Unknown browser type!, Please check our configuration");
-//            }
-//        }
-//    }
 
     private WebDriver getRemoteWebDriver(DesiredCapabilities desiredCapabilities) {
         RemoteWebDriver remoteWebDriver = null;
