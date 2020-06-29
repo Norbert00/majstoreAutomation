@@ -28,6 +28,9 @@ public class LoginPage extends BasePage {
     private static final String INCORRECTUSERNAME = "adam";
     private static final String INCORRECTPASSWORD = "321Start";
     private static final String ERRORMESSAGE = "Error: Invalid Password.";
+    private static final String CORRECTUSERNAME = "Test1";
+    private static final String CORRECTPASSWORD = "Test1";
+
 
 
     public static String getINCORRECTUSERNAME() {
@@ -37,6 +40,12 @@ public class LoginPage extends BasePage {
         return INCORRECTPASSWORD;
     }
     public static String getErrormessage() {return ERRORMESSAGE;}
+    public static String getCorrectusername() {
+        return CORRECTUSERNAME;
+    }
+    public static String getCorrectpassword() {
+        return CORRECTPASSWORD;
+    }
 
 
     @Step("Type into User Name Field {username}")
@@ -63,24 +72,9 @@ public class LoginPage extends BasePage {
         AssertWebElement.assertThat(errorMessageField).isDisplayed().hasText(warningMessage);
     }
 
-//    @Step("Getting warning message from Login Page")
-//    private String getErrorMessageOut() {
-//        waitUntilElementIsVisible(errorMessageField);
-//        System.out.println(errorMessageField.getText());
-//        return errorMessageField.getText();
-//    }
-//
     public void userEnterIncorrectLoginAndPassword(String username, String password) {
         enterLoginToTheUsernameInput(username);
         enterPasswordInPasswordField(password);
         clickOnLoginButton();
     }
-//
-//    @Step("Getting is warning message display")
-//    public boolean errorMessageIsDisplay() {
-//        boolean errorMessageDisplay = (getErrorMessageOut().equals(ERRORMESSAGE)) ? true : false;
-//        return errorMessageDisplay;
-//    }
-
-
 }

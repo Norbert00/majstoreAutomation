@@ -16,4 +16,18 @@
         </classes>
     </test>
 
+    <test name="Positive Login Tests">
+        <parameter name="browser" value="CHROME"/>
+        <classes>
+            <class name="tests.PositiveLoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Add product to Cart">
+        <parameter name="browser" value="CHROME"/>
+        <classes>
+            <class name="tests.AddProductToCartTest"/>
+        </classes>
+    </test>
+
 </suite>

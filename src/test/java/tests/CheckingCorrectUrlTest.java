@@ -1,5 +1,6 @@
 package tests;
 
+import gui.driver.DriverUtils;
 import gui.pom.NavigationBar;
 import gui.test.base.TestBase;
 
@@ -14,7 +15,7 @@ public class CheckingCorrectUrlTest extends TestBase {
     @Description("The goal of this test is to check that when we enter the correct url address we will be redirectly to the " +
             "correct web page")
     public void checkingMajstoreUrtTest() {
-
+        DriverUtils.setInitialConfiguration();
         NavigationBar navigationBar = new NavigationBar();
         navigationBar.assertThatTheUrlIsCorrect(navigationBar.getExpectedUrl());
 

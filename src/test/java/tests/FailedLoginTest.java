@@ -16,7 +16,7 @@ public class FailedLoginTest extends TestBase {
     @Description("The goal of this test is to log in using not proper username and password" +
             " and check if warning message Invalid username or password is displayed")
     public void asUserTryToLoginWithIncorrectLoginAndPassword() {
-
+        DriverUtils.setInitialConfiguration();
         DriverUtils.navigateToPage(LOGIN_URL);
 
         LoginPage loginPage = new LoginPage();
