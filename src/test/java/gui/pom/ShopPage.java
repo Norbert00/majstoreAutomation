@@ -1,6 +1,7 @@
 package gui.pom;
 
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -16,7 +17,7 @@ public class ShopPage extends BasePage {
     }
 
 
-
+    @Step("User choose the product {nameOfProduct}")
     public void clickOnChosenProductInShop(List<WebElement> listOfProducts, String nameOfProduct) {
         for (WebElement product : listOfProducts) {
             if (product.getText().equals(nameOfProduct)) {
