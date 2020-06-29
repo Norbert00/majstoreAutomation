@@ -24,7 +24,7 @@ public class NavigationBar {
 
     private String urlC = getActualPageUrl();
 
-    @Step("Comparing entered url with the correct {expectedUrl}")
+    @Step("Comparing entered url with the correct {url}")
     public void assertThatTheUrlIsCorrect(String url) {
         OwnLogger logger = new OwnLogger();
         if (urlC != null) {
