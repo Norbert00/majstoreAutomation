@@ -21,5 +21,9 @@ public class WaitForElement {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public static void waitWithStalenessOfException(WebElement element) {
+        WebDriverWait webDriverWait = getWebDriverWait();
+        webDriverWait.until(ExpectedConditions.stalenessOf(element));
+    }
 
 }

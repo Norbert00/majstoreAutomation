@@ -15,9 +15,14 @@ import static org.testng.Assert.*;
 public class NavigationBar extends BasePage {
 
     private final String expectedUrl = APPLICATION_URL;
+    private final String SHOP = "Shop";
 
     @FindBy(xpath = "//*[@id='top-menu']/li/a")
     private List<WebElement> topNavigationMenu;
+
+    public String getSHOP() {
+        return SHOP;
+    }
 
     public List<WebElement> getTopNavigationMenu() {
         return topNavigationMenu;

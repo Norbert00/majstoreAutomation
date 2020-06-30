@@ -30,4 +30,12 @@
         </classes>
     </test>
 
+    <test name="Add cute price on Cart page">
+        <parameter name="browser" value="CHROME"/>
+        <classes>
+            <class name="tests.CutPriceTest"/>
+        </classes>
+    </test>
+
+
 </suite>

@@ -9,11 +9,17 @@ import java.util.List;
 
 public class ShopPage extends BasePage {
 
+    private final String NAME_OF_THE_PRODUCT = "Shirt 2";
+
     @FindBy(xpath = "//*[@class='woocommerce-loop-product__title']")
     private List<WebElement> listOfAllProductsInShop;
 
     public List<WebElement> getListOfAllProductsInShop() {
         return listOfAllProductsInShop;
+    }
+
+    public String getNAME_OF_THE_PRODUCT() {
+        return NAME_OF_THE_PRODUCT;
     }
 
 
