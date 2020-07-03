@@ -1,34 +1,21 @@
 package tests;
 
-import api.authentication.Authentication;
-import api.buildOfResponse.BuildGiven;
-import gui.configuration.ConfigurationProperties;
-import gui.configuration.PropertiesLoader;
+import api.test.base.ApiTestBase;
 import io.restassured.response.Response;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.Test;
 
-import java.util.Properties;
+import static io.restassured.RestAssured.when;
 
-import static api.configuration.ApplicationEndPoints.PRODUCT_ENDPOINT;
+public class SimpleApiGet extends ApiTestBase {
 
-public class SimpleApiGet {
-
-
-    @BeforeClass
-    public void beforeClass() {
-        PropertiesLoader propertiesLoader = new PropertiesLoader();
-        Properties propertiesFromFile = propertiesLoader.getPropertiesFromFile("configuration.properties");
-        ConfigurationProperties.setProperties(propertiesFromFile);
-    }
 
     @Test
     public void simpleGetTest() {
-        Authentication authentication = new Authentication();
-        BuildGiven buildGiven = new BuildGiven();
-        Response response = buildGiven.getResponse(PRODUCT_ENDPOINT, authentication.getUsername(),authentication.getPassword());
-        Assert.assertEquals(200, response.getStatusCode());
+        Response response =
+                when()
+                .get("/227");
+        Assertions.assertEquals(200, response.statusCode());
     }
 
 }
