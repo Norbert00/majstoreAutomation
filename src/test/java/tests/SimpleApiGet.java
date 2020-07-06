@@ -1,5 +1,6 @@
 package tests;
 
+import api.configuration.ApplicationEndPoints;
 import api.test.base.ApiTestBase;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
@@ -14,7 +15,7 @@ public class SimpleApiGet extends ApiTestBase {
     public void simpleGetTest() {
         Response response =
                 when()
-                .get("/227");
+                .get(ApplicationEndPoints.PRODUCT_ENDPOINT +"227");
         Assertions.assertEquals(200, response.statusCode());
     }
 
