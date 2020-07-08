@@ -37,9 +37,15 @@
         </classes>
     </test>
 
-    <test name="Simple Api test">
+    <test name="Negative get product test">
         <classes>
-            <class name="tests.SimpleApiGet"/>
+            <class name="tests.NegativeGetProductTest"/>
+        </classes>
+    </test>
+
+    <test name="Positive get product test">
+        <classes>
+            <class name="tests.PositiveLoginTest"/>
         </classes>
     </test>
 

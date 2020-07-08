@@ -1,17 +1,20 @@
 package api.POJOs;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Product {
 
     private int id;
     private String name;
     private String slug;
-    private String price;
+    private String regularPrice;
 
-    public Product(int id, String name, String slug, String price) {
+    public Product(int id, String name, String slug, String regularPrice) {
         this.id = id;
         this.name = name;
         this.slug = slug;
-        this.price = price;
+        this.regularPrice = regularPrice;
     }
 
     public Product() {
@@ -42,10 +45,20 @@ public class Product {
     }
 
     public String getPrice() {
-        return price;
+        return regularPrice;
     }
 
     public void setPrice(String price) {
-        this.price = price;
+        this.regularPrice = regularPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", slug='" + slug + '\'' +
+                ", description='" + regularPrice + '\'' +
+                '}';
     }
 }
