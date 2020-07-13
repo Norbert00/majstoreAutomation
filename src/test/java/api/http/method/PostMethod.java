@@ -1,23 +1,24 @@
 package api.http.method;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.gson.Gson;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
-import static org.apache.http.HttpStatus.SC_CREATED;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class PostMethod {
 
     private Response response;
 
-    public void sendPost(Object objectToSend, String expectedEndPoint) {
-         given()
+    public static Response sendPost(Object objectToSend, String expectedEndPoint) {
+
+        Gson gson = new Gson();
+        String json = gson.toJson(objectToSend);
+        return given()
                 .contentType("application/json")
-                .body(objectToSend)
+                .body(json)
                 .when()
-                .post(expectedEndPoint)
-                .then().log().all().statusCode(SC_CREATED);
+                .post(expectedEndPoint);
 
     }
 

@@ -1,4 +1,4 @@
-package tests;
+package tests.gui;
 
 
 import gui.pom.NavigationBar;

@@ -1,4 +1,4 @@
-package tests;
+package tests.api;
 
 import api.Utils.ExtractObject;
 import api.configuration.ApplicationEndPoints;
@@ -20,7 +20,7 @@ public class NegativeGetProductTest extends ApiTestBase {
 
         Response response = GetMethod.createResponse(ApplicationEndPoints.PRODUCT_ENDPOINT+ productId);
 
-        String message = ExtractObject.extractObject(response,"message");
+        Object message = ExtractObject.extractObject(response,"message");
 
         Assert.assertEquals(response.statusCode(),SC_NOT_FOUND);
         Assert.assertEquals(message, expectedMessage);

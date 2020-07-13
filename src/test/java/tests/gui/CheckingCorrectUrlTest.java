@@ -1,4 +1,4 @@
-package tests;
+package tests.gui;
 
 import gui.driver.DriverUtils;
 import gui.pom.NavigationBar;

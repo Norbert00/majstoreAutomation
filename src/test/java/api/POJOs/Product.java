@@ -17,39 +17,20 @@ public class Product {
         this.regularPrice = regularPrice;
     }
 
-    public Product() {
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSlug() {
         return slug;
     }
 
-    public void setSlug(String slug) {
-        this.slug = slug;
-    }
-
     public String getPrice() {
         return regularPrice;
-    }
-
-    public void setPrice(String price) {
-        this.regularPrice = regularPrice;
     }
 
     @Override
