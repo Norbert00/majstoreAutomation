@@ -7,10 +7,10 @@ public class DataForTests {
     @DataProvider(name="incorrectIds")
     public static Object[][] localDataProvider() {
         return new Object[][] {
-                {"321321","Invalid ID."},
-                {"123213","Invalid ID."},
-                {"321321","Invalid ID."},
-                {"253213219", "Invalid ID."}
+                {"321321","message","Invalid ID."},
+                {"123213","message","Invalid ID."},
+                {"321321","message","Invalid ID."},
+                {"253213219","message","Invalid ID."}
         };
     }
 

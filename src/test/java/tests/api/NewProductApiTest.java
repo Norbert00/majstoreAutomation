@@ -5,6 +5,7 @@ import api.Utils.ExtractObject;
 import api.configuration.ApplicationEndPoints;
 import api.http.method.GetMethod;
 import api.http.method.PostMethod;
+import api.response.assertions.AssertableResponse;
 import api.test.base.ApiTestBase;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -17,13 +18,14 @@ public class NewProductApiTest extends ApiTestBase {
     @Test
     public void createProductTest() {
         Product product = new Product(0,"gsonExtracted ","new","666.00");
+        AssertableResponse assertableResponse = new AssertableResponse();
 
-        Response response = PostMethod.sendPost(product,ApplicationEndPoints.PRODUCT_ENDPOINT);
-
-        Assert.assertEquals(response.statusCode(),SC_CREATED);
+        Response response = PostMethod.sendRequest(product,ApplicationEndPoints.PRODUCT_ENDPOINT);
+        assertableResponse.hasStatusCode(response,SC_CREATED);
 
         String id = ExtractObject.extractObject(response,"id");
-        response = GetMethod.createResponse(ApplicationEndPoints.PRODUCT_ENDPOINT + id);
+
+        response = GetMethod.sendRequest(ApplicationEndPoints.PRODUCT_ENDPOINT + id);
 
         String createdId = ExtractObject.extractObject(response,"id");
 

@@ -6,13 +6,12 @@ import static io.restassured.RestAssured.given;
 
 public class DeleteMethod {
 
-    public static Response sendDelete (String endPoint) {
+
+    public static Response sendRequest(String endPoint) {
         return
                 given()
-                    .queryParam("force", "true")
-                .when()
-                    .delete(endPoint);
-
+                        .queryParam("force", "true")
+                        .when()
+                        .delete(endPoint);
     }
-
 }

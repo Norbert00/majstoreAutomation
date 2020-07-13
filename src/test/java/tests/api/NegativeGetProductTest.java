@@ -1,34 +1,26 @@
 package tests.api;
 
-import api.Utils.ExtractObject;
 import api.configuration.ApplicationEndPoints;
 import api.data.providers.DataForTests;
 import api.http.method.GetMethod;
+import api.response.assertions.AssertableResponse;
 import api.test.base.ApiTestBase;
 import io.restassured.response.Response;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 
 public class NegativeGetProductTest extends ApiTestBase {
 
 
-
     @Test(dataProvider = "incorrectIds", dataProviderClass = DataForTests.class)
-    public void simpleGetTest(String productId, String expectedMessage) {
+    public void simpleGetTest(String productId, String fieldInJson, String expectedMessage) {
+        Response response = GetMethod.sendRequest(ApplicationEndPoints.PRODUCT_ENDPOINT + productId);
 
-        Response response = GetMethod.createResponse(ApplicationEndPoints.PRODUCT_ENDPOINT+ productId);
-
-        Object message = ExtractObject.extractObject(response,"message");
-
-        Assert.assertEquals(response.statusCode(),SC_NOT_FOUND);
-        Assert.assertEquals(message, expectedMessage);
+        AssertableResponse assertableResponse = new AssertableResponse();
+        assertableResponse.hasStatusCode(response,SC_NOT_FOUND);
+        assertableResponse.fieldInJson(response,fieldInJson,expectedMessage);
     }
-
-
-
-
 
 
 }
