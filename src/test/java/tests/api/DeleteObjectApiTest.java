@@ -8,6 +8,7 @@ import api.http.method.GetMethod;
 import api.http.method.PostMethod;
 import api.response.assertions.AssertableResponse;
 import api.test.base.ApiTestBase;
+import io.qameta.allure.Description;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -15,6 +16,8 @@ import static org.apache.http.HttpStatus.*;
 
 public class DeleteObjectApiTest extends ApiTestBase {
 
+    @Description("The goal of this test is to check that if we send an invalid product id"
+            + "that we should get status code 200 and if we send get method to the specific product we should get status cod 404")
     @Test
     public static void positiveDeleteObjectTest() {
         Product product = new Product(0, "New product for delete ", "new", "666.00");
