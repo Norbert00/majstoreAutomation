@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import static org.apache.http.HttpStatus.*;
 
-public class DeleteObjectApiTest extends ApiTestBase {
+public class DeleteProductApiTest extends ApiTestBase {
 
     @Description("The goal of this test is to check that if we send an invalid product id"
             + "that we should get status code 200 and if we send get method to the specific product we should get status cod 404")

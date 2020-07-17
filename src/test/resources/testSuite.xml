@@ -49,5 +49,17 @@
         </classes>
     </test>
 
+    <test name="Positive send post method and create new product test">
+        <classes>
+            <class name="tests.api.NewProductApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Positive send delete method and delete selected product">
+        <classes>
+            <class name="tests.api.DeleteProductApiTest"/>
+        </classes>
+    </test>
+
 
 </suite>

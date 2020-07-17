@@ -17,7 +17,7 @@ public class DataForTests {
     @DataProvider(name = "correctID")
     public static Object[][] correctIdProvider() {
         return new Object[][] {
-                {"259","name","Premium Quality"},
+                {"83","name","Black Jacket"},
                 {"222","name","Shirt 2"},
                 {"201","name","Men shirt"},
                 {"199","name","Black Bag"},
