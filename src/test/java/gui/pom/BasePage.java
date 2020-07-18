@@ -8,6 +8,4 @@ public class BasePage {
     public BasePage() {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
-
-
 }

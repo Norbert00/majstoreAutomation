@@ -14,8 +14,4 @@ public class OwnLogger {
     public void setLoggerInfo(String newInfo) {
         logger.info(newInfo);
     }
-
-
-
-
 }

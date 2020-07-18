@@ -34,7 +34,7 @@ public class AssertWebElement extends AbstractAssert<AssertWebElement, WebElemen
 
         String actualElementText = actual.getText();
         if (!actualElementText.equals(expectedTextValue)) {
-            failWithMessage("Element text was <%s> expecting to be <%s>, ", actualElementText,expectedTextValue);
+            failWithMessage("Element text was <%s> expecting to be <%s>, ", actualElementText, expectedTextValue);
         }
         logger.info("WebElement has expected text!");
         return this;

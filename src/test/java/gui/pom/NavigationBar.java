@@ -40,12 +40,9 @@ public class NavigationBar extends BasePage {
         }
     }
 
-
     public void clickOnChosenLinkInTopNavMenu(String nameOfTheElementInMenu) {
-        clickOnElementInNavTopMenu(getTopNavigationMenu(),nameOfTheElementInMenu);
+        clickOnElementInNavTopMenu(getTopNavigationMenu(), nameOfTheElementInMenu);
     }
-
-
 
     public String getExpectedUrl() {
         return expectedUrl;
@@ -71,9 +68,5 @@ public class NavigationBar extends BasePage {
             fail();
         }
     }
-
-
-
-
 
 }

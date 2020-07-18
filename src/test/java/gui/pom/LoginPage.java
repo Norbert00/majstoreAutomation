@@ -1,7 +1,6 @@
 package gui.pom;
 
 
-
 import gui.generic.assertions.AssertWebElement;
 import gui.wait.WaitForElement;
 import io.qameta.allure.Step;
@@ -31,22 +30,25 @@ public class LoginPage extends BasePage {
     private static final String CORRECTUSERNAME = "Test1";
     private static final String CORRECTPASSWORD = "Test1";
 
-
-
     public static String getINCORRECTUSERNAME() {
         return INCORRECTUSERNAME;
     }
+
     public static String getINCORRECTPASSWORD() {
         return INCORRECTPASSWORD;
     }
-    public static String getErrormessage() {return ERRORMESSAGE;}
+
+    public static String getErrormessage() {
+        return ERRORMESSAGE;
+    }
+
     public static String getCorrectusername() {
         return CORRECTUSERNAME;
     }
+
     public static String getCorrectpassword() {
         return CORRECTPASSWORD;
     }
-
 
     @Step("Type into User Name Field {username}")
     private void enterLoginToTheUsernameInput(String username) {

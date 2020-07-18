@@ -25,7 +25,7 @@ public class ProductPage extends BasePage {
         return SIZE;
     }
 
-    public WebElement getSizeOptionList(){
+    public WebElement getSizeOptionList() {
         return sizeOptionList;
     }
 
@@ -36,7 +36,6 @@ public class ProductPage extends BasePage {
     public WebElement getViewCartButton() {
         return viewCartButton;
     }
-
 
 
     private void choseTheSizeOfProduct(WebElement listOfSizes, String chosenSize) {
@@ -62,7 +61,7 @@ public class ProductPage extends BasePage {
 
     @Step("User chooses the size {sizeOfProduct} of the product and click on add to cart button")
     public void userChooseTheSizeOfProductAndClickAddToCartButton(String sizeOfProduct) {
-        choseTheSizeOfProduct(getSizeOptionList(),sizeOfProduct);
+        choseTheSizeOfProduct(getSizeOptionList(), sizeOfProduct);
         clickOnAddToCartButton();
     }
 
@@ -70,8 +69,6 @@ public class ProductPage extends BasePage {
     public void assertThatAfterAddingProductToTheCartButtonViewCartIsDisplayedOnProductPage() {
         isDisplayViewCartButton(getViewCartButton());
     }
-
-
 
 
 }

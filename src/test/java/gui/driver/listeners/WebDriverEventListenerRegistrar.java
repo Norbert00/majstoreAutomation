@@ -8,7 +8,7 @@ public class WebDriverEventListenerRegistrar {
     public synchronized static WebDriver registerWebDriverEventListener(WebDriver driver) {
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver);
         DriverEventListener driverEventListener = new DriverEventListener();
-        return  eventFiringWebDriver.register(driverEventListener);
+        return eventFiringWebDriver.register(driverEventListener);
     }
 
 }

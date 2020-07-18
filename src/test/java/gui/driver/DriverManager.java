@@ -11,7 +11,6 @@ import static gui.driver.BrowserType.FIREFOX;
 public class DriverManager {
 
 
-
     private static ThreadLocal<WebDriver> webDriverThreadLocal = new ThreadLocal<>();
     private static ThreadLocal<BrowserType> browserTypeThreadLocal = new ThreadLocal<>();
 
@@ -37,12 +36,11 @@ public class DriverManager {
     }
 
     public static WebDriver getWebDriver() {
-        if(webDriverThreadLocal.get() == null) {
+        if (webDriverThreadLocal.get() == null) {
             throw new IllegalStateException("WebDriver Instance was null! Please create instance of WebDriver using setWebDriver!");
         }
         return webDriverThreadLocal.get();
     }
-
 
 
     public static void disposeDriver() {

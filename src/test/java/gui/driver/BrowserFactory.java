@@ -62,13 +62,13 @@ public class BrowserFactory {
 
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.setHeadless(true);
-                        chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+                        chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors");
                         return new ChromeDriver(chromeOptions);
                     case FIREFOX:
                         System.setProperty("webdriver.gecko.driver", LocalWebDriverProperties.getFirefoxWebDriverLocation());
                         FirefoxOptions firefoxOptions = new FirefoxOptions();
                         firefoxOptions.setHeadless(true);
-                        firefoxOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+                        firefoxOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors");
                         return new FirefoxDriver(firefoxOptions);
                     default:
                         throw new IllegalStateException(MESSAGE_PROBLEM_WITH_HEADLESS);
@@ -83,7 +83,7 @@ public class BrowserFactory {
                         System.setProperty("webdriver.gecko.driver", LocalWebDriverProperties.getFirefoxWebDriverLocation());
                         FirefoxOptions firefoxOptions = new FirefoxOptions();
                         firefoxOptions.merge(desiredCapabilities);
-                        return  new FirefoxDriver(firefoxOptions);
+                        return new FirefoxDriver(firefoxOptions);
 
                     default:
                         throw new IllegalStateException(MESSAGE_UNKNOWN_BROWSER);

@@ -14,5 +14,4 @@ public class GetMethod {
                         .get(endPoint)
                         .then().extract().response();
     }
-
 }

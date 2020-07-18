@@ -37,7 +37,6 @@ public class MyAccountPage extends BasePage {
     }
 
 
-
     @Step("Comparing entered url with the correct {url}")
     public void assertThatTheUrlIsCorrect(String url) {
         String actualPageUrl = getActualPageUrl();
@@ -52,7 +51,7 @@ public class MyAccountPage extends BasePage {
     }
 
     @Step("Assert that the My Account text and Logout button are display")
-    public void assertThatMyAccountAndLogoutAreDisplay(){
+    public void assertThatMyAccountAndLogoutAreDisplay() {
         WaitForElement.waitUntilElementIsVisible(myAccountText);
         WaitForElement.waitUntilElementIsVisible(logOutButton);
         AssertWebElement.assertThat(myAccountText).isDisplayed();

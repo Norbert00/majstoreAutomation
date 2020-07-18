@@ -65,7 +65,7 @@ public class CartPage extends BasePage {
     private double splitAmount(String amountToSplit) {
         double priceAsNumber;
         String[] split = amountToSplit.split(" ");
-        String part1 = split[0].replace(",",".");
+        String part1 = split[0].replace(",", ".");
         priceAsNumber = Double.parseDouble(part1);
         return priceAsNumber;
     }
@@ -97,16 +97,4 @@ public class CartPage extends BasePage {
         boolean flag;
         assertTrue(flag = (amountAfterCutPrice == total) ? true : false);
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }

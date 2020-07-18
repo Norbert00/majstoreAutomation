@@ -10,7 +10,4 @@ public class Au {
     public static final String GET_PWD_ONLINE = "cs_ee64f2f162c55911cc4daee3edb8b41723843039";
     public static final String PARAMS_KEY = "consumer_key";
     public static final String PARAMS_SECRET = "consumer_secret";
-
-
-
 }

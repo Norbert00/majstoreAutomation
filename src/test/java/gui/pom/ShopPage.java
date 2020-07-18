@@ -22,7 +22,6 @@ public class ShopPage extends BasePage {
         return NAME_OF_THE_PRODUCT;
     }
 
-
     @Step("User choose the product {nameOfProduct}")
     public void clickOnChosenProductInShop(List<WebElement> listOfProducts, String nameOfProduct) {
         for (WebElement product : listOfProducts) {
@@ -33,6 +32,5 @@ public class ShopPage extends BasePage {
             System.out.println("Checked the method clickOnChosenProductInShop in ShopPage class");
         }
     }
-
 
 }

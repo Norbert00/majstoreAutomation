@@ -1,9 +1,7 @@
 package gui.configuration;
 
 
-
 public class LocalWebDriverProperties {
-
 
 
     public static String getChromeWebDriverLocation() {
