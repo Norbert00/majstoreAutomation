@@ -45,8 +45,8 @@ public class ApiTestBase {
             setUriAndPath(true);
             RestAssured.requestSpecification = new RequestSpecBuilder()
                     .setContentType(ContentType.JSON)
-                    .addParam(Au.PARAMS_KEY, Au.GET_USR_ONLINE)
-                    .addParam(Au.PARAMS_SECRET, Au.GET_PWD_ONLINE).build();
+                    .addQueryParam(Au.PARAMS_KEY, Au.GET_USR_ONLINE)
+                    .addQueryParam(Au.PARAMS_SECRET, Au.GET_PWD_ONLINE).build();
         } else {
             setUriAndPath(false);
             RestAssured.authentication = oauth(Au.GET_USR_LOCALHOST, Au.GET_PWD_LOCALHOST, "", "");
