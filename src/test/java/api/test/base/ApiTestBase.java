@@ -11,9 +11,7 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import java.util.Properties;
-
 import static io.restassured.RestAssured.oauth;
 
 public class ApiTestBase {
